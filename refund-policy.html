@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Refund Policy | SalahJuniorDev</title>
+    <link rel="shortcut icon" href="img/fav icon/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        body { background: #0f172a; color: #94a3b8; font-family: Rubik, sans-serif; margin: 0; }
+        * { cursor: none !important; }
+        #cursor-dot {
+            position: fixed; top: 0; left: 0; width: 8px; height: 8px;
+            background: #0ea5e9; border-radius: 50%; pointer-events: none; z-index: 99999;
+            transform: translate(-50%,-50%);
+            transition: transform 0.1s ease, background 0.2s ease;
+            box-shadow: 0 0 8px #0ea5e9, 0 0 16px rgba(14,165,233,0.5);
+        }
+        #cursor-ring {
+            position: fixed; top: 0; left: 0; width: 36px; height: 36px;
+            border: 2px solid rgba(14,165,233,0.6); border-radius: 50%;
+            pointer-events: none; z-index: 99998; transform: translate(-50%,-50%);
+            transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, transform 0.12s ease;
+        }
+        #cursor-ring.hovered { width: 56px; height: 56px; border-color: rgba(14,165,233,1); background: rgba(14,165,233,0.08); }
+        #cursor-dot.hovered  { transform: translate(-50%,-50%) scale(1.8); background: #fff; }
+        #cursor-dot.clicking { transform: translate(-50%,-50%) scale(0.5); }
+        #mainNav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;
+            padding: 18px 0; transition: background 0.35s ease, padding 0.35s ease;
+        }
+        #mainNav.nav-scrolled {
+            background: rgba(10,15,30,0.97); backdrop-filter: blur(12px);
+            padding: 12px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+        }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 30px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { text-decoration: none; display: flex; align-items: baseline; gap: 2px; }
+        .logo-salah  { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.5px; }
+        .logo-junior { font-size: 20px; font-weight: 300; color: #94a3b8; letter-spacing: -0.5px; }
+        .logo-dev    { font-size: 11px; font-weight: 600; color: #0ea5e9; letter-spacing: 2px; text-transform: uppercase; margin-left: 3px; }
+        .nav-links { display: flex; list-style: none; gap: 28px; margin: 0; padding: 0; align-items: center; }
+        .nav-link-item { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.25s; }
+        .nav-link-item:hover { color: #0ea5e9; }
+        .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+        .nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+        @media(max-width:768px){
+            .nav-hamburger { display: flex; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
+                background: rgba(10,15,30,0.98); padding: 20px 30px; gap: 16px; }
+            .nav-links.open { display: flex; }
+        }
+        .sj-page-hero {
+            padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden;
+            background: linear-gradient(160deg, #0f172a 0%, #0c1628 60%, #071224 100%);
+            border-bottom: 1px solid rgba(14,165,233,0.1);
+        }
+        .sj-page-hero::before {
+            content: ''; position: absolute; inset: 0; pointer-events: none;
+            background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(14,165,233,0.12), transparent);
+        }
+        .sj-page-hero .icon-badge {
+            width: 68px; height: 68px; border-radius: 20px; margin: 0 auto 24px;
+            background: rgba(14,165,233,0.1); border: 1px solid rgba(14,165,233,0.25);
+            display: flex; align-items: center; justify-content: center; font-size: 28px; color: #0ea5e9;
+        }
+        .sj-page-hero h1 { font-size: clamp(28px,5vw,44px); font-weight: 700; color: #fff; margin: 0 0 12px; letter-spacing: -0.5px; }
+        .sj-page-hero p  { font-size: 15px; color: #64748b; max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
+        .breadcrumb { display: flex; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 0; }
+        .breadcrumb li { font-size: 12px; color: #475569; }
+        .breadcrumb li a { color: #0ea5e9; text-decoration: none; }
+        .sj-content { max-width: 860px; margin: 0 auto; padding: 72px 24px 100px; }
+        .sj-back { display: inline-flex; align-items: center; gap: 8px; color: #0ea5e9; text-decoration: none;
+            font-size: 13px; font-weight: 500; margin-bottom: 48px; transition: gap 0.25s; }
+        .sj-back:hover { gap: 12px; }
+        .last-updated { font-size: 12px; color: #475569; text-align: right; margin-bottom: 36px; }
+        .sj-card { background: #111827; border: 1px solid rgba(14,165,233,0.1); border-radius: 16px; padding: 36px 40px; margin-bottom: 20px; transition: border-color 0.3s; }
+        .sj-card:hover { border-color: rgba(14,165,233,0.28); }
+        .sj-card h2 { font-size: 17px; font-weight: 600; color: #e2e8f0; margin: 0 0 18px; display: flex; align-items: center; gap: 10px; }
+        .sj-card h2 .card-icon { color: #0ea5e9; font-size: 18px; }
+        .sj-card p, .sj-card li { font-size: 14px; line-height: 1.85; color: #94a3b8; }
+        .sj-card ul { padding-left: 20px; margin: 12px 0 0; }
+        .sj-card ul li { margin-bottom: 8px; }
+        .sj-card a { color: #0ea5e9; text-decoration: none; }
+        .sj-card a:hover { text-decoration: underline; }
+        .sj-card.highlight { border-color: rgba(239,68,68,0.25); background: linear-gradient(135deg,#1a0f0f,#111827); }
+        .sj-card.highlight h2 .card-icon { color: #f87171; }
+        .sj-card.highlight h2 { color: #fca5a5; }
+        .sj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+        .sj-grid-item { border-radius: 10px; padding: 16px 18px; font-size: 13px; line-height: 1.6; color: #94a3b8; }
+        .sj-grid-item.allowed { background: rgba(34,197,94,0.07); border: 1px solid rgba(34,197,94,0.2); }
+        .sj-grid-item.not-allowed { background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.2); }
+        .gi-mark { font-weight: 700; margin-right: 6px; }
+        .sj-grid-item.allowed .gi-mark { color: #4ade80; }
+        .sj-grid-item.not-allowed .gi-mark { color: #f87171; }
+        @media(max-width:600px){ .sj-grid { grid-template-columns: 1fr; } }
+        .faq-category { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+            color: #0ea5e9; margin: 48px 0 18px; padding-bottom: 10px; border-bottom: 1px solid rgba(14,165,233,0.15); }
+        .faq-item { background: #111827; border: 1px solid rgba(14,165,233,0.1); border-radius: 12px; margin-bottom: 10px; overflow: hidden; transition: border-color 0.3s; }
+        .faq-item:hover { border-color: rgba(14,165,233,0.3); }
+        .faq-question { padding: 20px 26px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .faq-question h4 { font-size: 14px; font-weight: 500; color: #e2e8f0; margin: 0; }
+        .faq-question i { color: #0ea5e9; transition: transform 0.3s; flex-shrink: 0; margin-left: 16px; font-size: 12px; }
+        .faq-question.open i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding: 16px 26px 20px; font-size: 14px; line-height: 1.8; color: #94a3b8; border-top: 1px solid rgba(14,165,233,0.08); }
+        .faq-answer.open { display: block; }
+        @media(max-width:600px){ .sj-card { padding: 26px 22px; } .sj-content { padding: 52px 18px 80px; } }
+    </style>
+</head>
+<body>
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <nav id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-salah">Salah</span><span class="logo-junior">Junior</span><span class="logo-dev">Dev</span>
+            </a>
+            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home" class="nav-link-item" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="index.html#about" class="nav-link-item" data-en="About" data-fr="A Propos">About</a></li>
+                <li><a href="index.html#services" class="nav-link-item" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="index.html#portfolio" class="nav-link-item" data-en="Portfolio" data-fr="Portfolio">Portfolio</a></li>
+                <li><a href="index.html#contact" class="nav-link-item" data-en="Contact" data-fr="Contact">Contact</a></li>
+                <li><button id="langToggleBtn" onclick="toggleLang()" style="background:transparent;border:1px solid rgba(255,255,255,0.35);color:#fff;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:1px;transition:all 0.3s;font-family:inherit;margin-left:4px;">FR</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="sj-page-hero">
+        <div class="icon-badge"><span class="ti-loop"></span></div>
+        <h1 data-en="Refund Policy" data-fr="Politique de Remboursement">Refund Policy</h1>
+        <p data-en="How we handle refund requests" data-fr="Comment nous traitons les demandes de remboursement">How we handle refund requests</p>
+        <ul class="breadcrumb">
+            <li><a href="index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+            <li>&#x203a;</li>
+            <li data-en="Refund Policy" data-fr="Politique de Remboursement">Refund Policy</li>
+        </ul>
+    </div>
+
+    <div class="sj-content">
+        <a href="index.html" class="sj-back"><i class="fas fa-arrow-left"></i> <span data-en="Back to Portfolio" data-fr="Retour au Portfolio">Back to Portfolio</span></a>
+        <p class="last-updated"><i class="fas fa-calendar-alt"></i> <span data-en="Last Updated: January 2026" data-fr="Derniere mise a jour : Janvier 2026">Last Updated: January 2026</span></p>
+        <div class="sj-card"><h2><span class="card-icon ti-info-alt"></span> <span data-en="Overview" data-fr="Aperçu">Overview</span></h2><div class="sj-body" data-body-en="At SalahJuniorDev, I am committed to delivering exceptional digital solutions. This Refund Policy outlines the terms under which refunds may or may not be issued. By engaging my services, you agree to these terms." data-body-fr="Chez SalahJuniorDev, je m'engage à fournir des solutions numériques exceptionnelles. Cette politique décrit les conditions dans lesquelles des remboursements peuvent être accordés. En faisant appel à mes services, vous acceptez ces conditions.">At SalahJuniorDev, I am committed to delivering exceptional digital solutions. This Refund Policy outlines the terms under which refunds may or may not be issued. By engaging my services, you agree to these terms.</div></div>
+<div class="sj-card"><h2><span class="card-icon ti-check-box"></span> <span data-en="Eligibility for Refunds" data-fr="Éligibilité aux Remboursements">Eligibility for Refunds</span></h2><div class="sj-body" data-body-en="Refunds may be considered if: the project has not yet started and you cancel within 48 hours of payment; I fail to deliver within the agreed timeframe without prior notice; the delivered work fundamentally fails to meet the agreed brief despite all revisions; or a technical error on my part caused loss or damage to your assets." data-body-fr="Des remboursements peuvent être envisagés si : le projet n'a pas encore démarré et vous annulez dans les 48 heures ; je ne livre pas dans les délais convenus sans préavis ; le travail livré ne répond pas fondamentalement au brief malgré toutes les révisions ; ou une erreur technique de ma part a causé une perte ou un dommage.">Refunds may be considered if: the project has not yet started and you cancel within 48 hours of payment; I fail to deliver within the agreed timeframe without prior notice; the delivered work fundamentally fails to meet the agreed brief despite all revisions; or a technical error on my part caused loss or damage to your assets.</div></div>
+<div class="sj-card highlight"><h2><span class="card-icon ti-close"></span> <span data-en="Non-Refundable Situations" data-fr="Situations Non Remboursables">Non-Refundable Situations</span></h2><div class="sj-body" data-body-en="Refunds will <strong>not</strong> be issued if you change your mind after work starts; you have exhausted all revisions; delays are caused by your failure to provide content or approvals; work has been delivered as per the agreed brief; or third-party costs have already been incurred on your behalf.<br><br><strong>Note:</strong> The 50% upfront deposit is non-refundable once work has commenced." data-body-fr="Les remboursements ne seront <strong>pas</strong> accordés si vous changez d'avis après le début des travaux ; vous avez épuisé toutes vos révisions ; les retards sont causés par votre manque de réactivité ; le travail a été livré conformément au brief ; ou des coûts tiers ont déjà été engagés.<br><br><strong>Note :</strong> L'acompte de 50% est non remboursable une fois les travaux commencés.">Refunds will <strong>not</strong> be issued if you change your mind after work starts; you have exhausted all revisions; delays are caused by your failure to provide content or approvals; work has been delivered as per the agreed brief; or third-party costs have already been incurred on your behalf.<br><br><strong>Note:</strong> The 50% upfront deposit is non-refundable once work has commenced.</div></div>
+<div class="sj-card"><h2><span class="card-icon ti-clipboard"></span> <span data-en="Refund Request Process" data-fr="Processus de Demande">Refund Request Process</span></h2><div class="sj-body" data-body-en="To request a refund: email <a href='mailto:salahjuniorncham@gmail.com'>salahjuniorncham@gmail.com</a> with subject <em>Refund Request - [Project Name]</em>, include your full name, project details, payment reference, and reason. I will review within 3-5 business days. Approved refunds are processed within 7-14 business days via the original payment method." data-body-fr="Pour demander un remboursement : envoyez un e-mail à <a href='mailto:salahjuniorncham@gmail.com'>salahjuniorncham@gmail.com</a> avec l'objet <em>Demande de Remboursement - [Nom du Projet]</em>, incluez votre nom, les détails du projet, la référence de paiement et la raison. Je répondrai dans 3 à 5 jours ouvrables. Les remboursements approuvés sont traités dans 7 à 14 jours ouvrables.">To request a refund: email <a href='mailto:salahjuniorncham@gmail.com'>salahjuniorncham@gmail.com</a> with subject <em>Refund Request - [Project Name]</em>, include your full name, project details, payment reference, and reason. I will review within 3-5 business days. Approved refunds are processed within 7-14 business days via the original payment method.</div></div>
+<div class="sj-card"><h2><span class="card-icon ti-email"></span> <span data-en="Contact" data-fr="Contact">Contact</span></h2><div class="sj-body" data-body-en="Email: <a href='mailto:salahjuniorncham@gmail.com'>salahjuniorncham@gmail.com</a><br>WhatsApp: +237 683 693 011<br>Address: Yaoundé, Emana, Cameroon" data-body-fr="E-mail : <a href='mailto:salahjuniorncham@gmail.com'>salahjuniorncham@gmail.com</a><br>WhatsApp : +237 683 693 011<br>Adresse : Yaoundé, Emana, Cameroun">Email: <a href='mailto:salahjuniorncham@gmail.com'>salahjuniorncham@gmail.com</a><br>WhatsApp: +237 683 693 011<br>Address: Yaoundé, Emana, Cameroon</div></div>
+    </div>
+
+    <script>
+    var nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', function() { nav.classList.toggle('nav-scrolled', window.scrollY > 60); });
+    document.getElementById('navHamburger').addEventListener('click', function() {
+        this.classList.toggle('open');
+        document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    var currentLang = 'en';
+    window.toggleLang = function() {
+        currentLang = currentLang === 'en' ? 'fr' : 'en';
+        document.querySelectorAll('[data-en]').forEach(function(el) {
+            el.textContent = el.getAttribute('data-' + currentLang);
+        });
+        document.querySelectorAll('.sj-body').forEach(function(el) {
+            var html = el.getAttribute('data-body-' + currentLang);
+            if (html) el.innerHTML = html;
+        });
+        document.querySelectorAll('.sj-grid-block').forEach(function(el) {
+            var html = el.getAttribute('data-grid-' + currentLang);
+            if (html) el.innerHTML = html;
+        });
+        document.getElementById('langToggleBtn').textContent = currentLang === 'en' ? 'FR' : 'EN';
+    };
+
+    window.toggleFAQ = function(el) {
+        var answer = el.nextElementSibling;
+        var isOpen = answer.classList.contains('open');
+        document.querySelectorAll('.faq-answer.open').forEach(function(a) {
+            a.classList.remove('open');
+            a.previousElementSibling.classList.remove('open');
+        });
+        if (!isOpen) { answer.classList.add('open'); el.classList.add('open'); }
+    };
+
+    (function() {
+        var dot = document.getElementById('cursor-dot');
+        var ring = document.getElementById('cursor-ring');
+        var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+        document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX; mouseY = e.clientY;
+            dot.style.left = mouseX + 'px'; dot.style.top = mouseY + 'px';
+        });
+        (function animateRing() {
+            ringX += (mouseX - ringX) * 0.12;
+            ringY += (mouseY - ringY) * 0.12;
+            ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
+            requestAnimationFrame(animateRing);
+        })();
+        document.querySelectorAll('a, button, [role="button"]').forEach(function(el) {
+            el.addEventListener('mouseenter', function() { dot.classList.add('hovered'); ring.classList.add('hovered'); });
+            el.addEventListener('mouseleave', function() { dot.classList.remove('hovered'); ring.classList.remove('hovered'); });
+        });
+        document.addEventListener('mousedown', function() { dot.classList.add('clicking'); });
+        document.addEventListener('mouseup',   function() { dot.classList.remove('clicking'); });
+    })();
+    </script>
+</body>
+</html>

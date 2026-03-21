@@ -1,0 +1,13 @@
+# robots.txt — salahjuniordev.vercel.app
+
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Block access to any private/build folders (precaution)
+Disallow: /node_modules/
+Disallow: /.vercel/
+Disallow: /cdn-cgi/
+
+# Sitemap location
+Sitemap: https://salahjuniordev.vercel.app/sitemap.xml
