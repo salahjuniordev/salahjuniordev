@@ -23,7 +23,7 @@
 		<meta property="og:url" content="https://salahjuniordev.vercel.app/">
 		<meta property="og:title" content="Salah Junior | Full-Stack Web Developer &amp; UI/UX Designer">
 		<meta property="og:description" content="Full-stack developer and designer based in Yaoundé, Cameroon. Available for web development, UI/UX, branding, and graphic design projects.">
-		<meta property="og:image" content="https://res.cloudinary.com/drmamswdc/image/upload/f_auto,q_auto/og-preview_vg2dcr.png">
+		<meta property="og:image" content="https://res.cloudinary.com/drmamswdc/image/upload/v1777510474/og-preview_gb0mep.png">
 		<meta property="og:locale" content="en_US">
 		<meta property="og:site_name" content="Salah Junior Portfolio">
 
@@ -32,7 +32,7 @@
 		<meta name="twitter:url" content="https://salahjuniordev.vercel.app/">
 		<meta name="twitter:title" content="Salah Junior | Full-Stack Web Developer &amp; UI/UX Designer">
 		<meta name="twitter:description" content="Full-stack developer and designer based in Yaoundé, Cameroon. Available for web, branding, and design projects.">
-		<meta name="twitter:image" content="https://res.cloudinary.com/drmamswdc/image/upload/f_auto,q_auto/og-preview_vg2dcr.png">
+		<meta name="twitter:image" content="https://res.cloudinary.com/drmamswdc/image/upload/v1777510474/og-preview_gb0mep.png">
         <!-- fav icons -->
       <link rel="shortcut icon" href="img/fav icon/favicon.png" type="image/x-icon">
       
@@ -85,6 +85,46 @@
 				position: relative;
 				opacity: 1;
 			}
+			/* Language toggle in nav */
+			.nav-lang-btn {
+				background: transparent;
+				border: 1px solid rgba(255,255,255,0.35);
+				color: #fff;
+				padding: 5px 14px;
+				border-radius: 20px;
+				font-size: 12px;
+				font-weight: 600;
+				letter-spacing: 1px;
+				transition: all 0.3s;
+				font-family: inherit;
+			}
+			.nav-lang-btn:hover {
+				background: rgba(14,165,233,0.15);
+				border-color: #0ea5e9;
+				color: #0ea5e9;
+			}
+			/* Desktop: sits at the end after nav links */
+			@media (min-width: 992px) {
+				.nav-lang-btn {
+					order: 10;
+					margin-left: 10px;
+				}
+			}
+			/* Mobile: logo left · lang toggle centered · hamburger far right */
+			@media (max-width: 991px) {
+				.nav-inner {
+					display: flex;
+					align-items: center;
+				}
+				.nav-lang-btn {
+					margin-left: auto;
+					margin-right: auto;
+				}
+				.nav-hamburger {
+					margin-left: 0;
+				}
+			}
+
 			* { cursor: none !important; }
 
 			#cursor-dot {
@@ -317,7 +357,10 @@
 					<span class="logo-salah">Salah</span><span class="logo-junior">Junior</span><span class="logo-dev">Dev</span>
 				</a>
 
-				<!-- Hamburger (mobile) -->
+				<!-- Language Toggle (middle on mobile, end of nav on desktop) -->
+				<button id="langToggleBtn" onclick="toggleLang()" class="nav-lang-btn">FR</button>
+
+				<!-- Hamburger (mobile) — always far right -->
 				<button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
 					<span></span>
 					<span></span>
@@ -333,7 +376,6 @@
 					<li><a href="#testimonials" data-scroll-nav="4" class="nav-link-item" data-en="Reviews" data-fr="Avis">Reviews</a></li>
 					<li><a href="#blog" data-scroll-nav="5" class="nav-link-item" data-en="Blog" data-fr="Blog">Blog</a></li>
 					<li><a href="#contact" data-scroll-nav="6" class="nav-link-item" data-en="Contact" data-fr="Contact">Contact</a></li>
-					<li><button id="langToggleBtn" onclick="toggleLang()" style="background:transparent;border:1px solid rgba(255,255,255,0.35);color:#fff;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;letter-spacing:1px;transition:all 0.3s;font-family:inherit;margin-left:4px;">FR</button></li>
 				</ul>
 			</div>
 		</nav>
@@ -1123,9 +1165,9 @@
                         <div class="blog-body">
                             <span class="blog-tag" data-en="Web Development" data-fr="Développement Web">Web Development</span>
                             <h4 class="blog-title">
-                                <a href="#blog" data-en="How I Build Full-Stack Apps for African Clients with Lovable.dev" data-fr="Comment je construis des apps Full-Stack pour les clients africains avec Lovable.dev">How I Build Full-Stack Apps for African Clients with Lovable.dev</a>
+                                <a href="#blog" data-en="How I Build Full-Stack Apps for African Clients" data-fr="Comment je construis des apps Full-Stack pour les clients africains">How I Build Full-Stack Apps for African Clients</a>
                             </h4>
-                            <p class="blog-excerpt" data-en="A behind-the-scenes look at my workflow: from client brief to deployed product, using AI-assisted development to move faster without cutting corners." data-fr="Un aperçu de mon workflow : du brief client au produit déployé, en utilisant le développement assisté par IA pour aller plus vite sans sacrifier la qualité.">A behind-the-scenes look at my workflow: from client brief to deployed product, using AI-assisted development to move faster without cutting corners.</p>
+                            <p class="blog-excerpt" data-en="A behind-the-scenes look at my workflow: from client brief to deployed product — how I move fast, stay organized, and deliver clean full-stack builds without cutting corners." data-fr="Un aperçu de mon workflow : du brief client au produit déployé — comment j'avance vite, reste organisé et livre des projets full-stack soignés sans sacrifier la qualité.">A behind-the-scenes look at my workflow: from client brief to deployed product — how I move fast, stay organized, and deliver clean full-stack builds without cutting corners.</p>
                             <div class="blog-meta">
                                 <span><i class="far fa-calendar-alt"></i> <span data-en="March 20, 2026" data-fr="20 Mars 2026">March 20, 2026</span></span>
                                 <span><i class="far fa-clock"></i> <span data-en="5 min read" data-fr="5 min de lecture">5 min read</span></span>
