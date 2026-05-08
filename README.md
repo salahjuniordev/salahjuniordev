@@ -1,4 +1,4 @@
-# Salah Junior — Portfolio
+# Salah Junior Dev — Portfolio
 
 Personal portfolio website built to showcase my work as a full-stack web developer, UI/UX designer, and graphic designer based in Yaoundé, Cameroon.
 
