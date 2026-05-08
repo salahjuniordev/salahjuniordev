@@ -75,4 +75,4 @@ Got a project in mind or just want to say hi?
 
 ---
 
-Made with focus and a lot of late nights. — Salah Junior
+Made with focus and a lot of late nights. — Salah Junior Dev
