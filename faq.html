@@ -30,7 +30,7 @@
         #cursor-ring.hovered { width: 56px; height: 56px; border-color: rgba(14,165,233,1); background: rgba(14,165,233,0.08); }
         #cursor-dot.hovered  { transform: translate(-50%,-50%) scale(1.8); background: #fff; }
         #cursor-dot.clicking { transform: translate(-50%,-50%) scale(0.5); }
-        #mainNav {
+                #mainNav {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;
             padding: 18px 0; transition: background 0.35s ease, padding 0.35s ease;
         }
@@ -38,31 +38,37 @@
             background: rgba(10,15,30,0.97); backdrop-filter: blur(12px);
             padding: 12px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.4);
         }
-        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 30px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 30px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
         .nav-logo { text-decoration: none; display: flex; align-items: baseline; gap: 2px; }
         .logo-salah  { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.5px; }
         .logo-junior { font-size: 20px; font-weight: 300; color: #94a3b8; letter-spacing: -0.5px; }
         .logo-dev    { font-size: 11px; font-weight: 600; color: #0ea5e9; letter-spacing: 2px; text-transform: uppercase; margin-left: 3px; }
-        .nav-links { display: flex; list-style: none; gap: 28px; margin: 0; padding: 0; align-items: center; }
-        .nav-link-item { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.25s; }
-        .nav-link-item:hover { color: #0ea5e9; }
-        .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
-        .nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
-        @media(max-width:768px){
-            .nav-hamburger { display: flex; }
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
-                background: rgba(10,15,30,0.98); padding: 20px 30px; gap: 16px; }
-            .nav-links.open { display: flex; }
+        .nav-lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.35);
+            color: #fff;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            font-family: 'Rubik', sans-serif;
+            cursor: pointer;
+        }
+        .nav-lang-btn:hover {
+            background: rgba(14,165,233,0.15);
+            border-color: #0ea5e9;
+            color: #0ea5e9;
         }
         .sj-page-hero {
             padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden;
-            background: linear-gradient(160deg, #0f172a 0%, #0c1628 60%, #071224 100%);
-            border-bottom: 1px solid rgba(14,165,233,0.1);
+            background: #0f172a; border-bottom: 1px solid rgba(14,165,233,0.1);
         }
-        .sj-page-hero::before {
-            content: ''; position: absolute; inset: 0; pointer-events: none;
-            background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(14,165,233,0.12), transparent);
-        }
+        .sj-page-hero::before { display: none; }
         .sj-page-hero .icon-badge {
             width: 68px; height: 68px; border-radius: 20px; margin: 0 auto 24px;
             background: rgba(14,165,233,0.1); border: 1px solid rgba(14,165,233,0.25);
@@ -87,7 +93,7 @@
         .sj-card ul li { margin-bottom: 8px; }
         .sj-card a { color: #0ea5e9; text-decoration: none; }
         .sj-card a:hover { text-decoration: underline; }
-        .sj-card.highlight { border-color: rgba(239,68,68,0.25); background: linear-gradient(135deg,#1a0f0f,#111827); }
+        .sj-card.highlight { border-color: rgba(239,68,68,0.25); background: #111827; }
         .sj-card.highlight h2 .card-icon { color: #f87171; }
         .sj-card.highlight h2 { color: #fca5a5; }
         .sj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
@@ -115,22 +121,12 @@
     <div id="cursor-dot"></div>
     <div id="cursor-ring"></div>
 
-    <nav id="mainNav">
+        <nav id="mainNav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
                 <span class="logo-salah">Salah</span><span class="logo-junior">Junior</span><span class="logo-dev">Dev</span>
             </a>
-            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html#home" class="nav-link-item" data-en="Home" data-fr="Accueil">Home</a></li>
-                <li><a href="index.html#about" class="nav-link-item" data-en="About" data-fr="A Propos">About</a></li>
-                <li><a href="index.html#services" class="nav-link-item" data-en="Services" data-fr="Services">Services</a></li>
-                <li><a href="index.html#portfolio" class="nav-link-item" data-en="Portfolio" data-fr="Portfolio">Portfolio</a></li>
-                <li><a href="index.html#contact" class="nav-link-item" data-en="Contact" data-fr="Contact">Contact</a></li>
-                <li><button id="langToggleBtn" onclick="toggleLang()" style="background:transparent;border:1px solid rgba(255,255,255,0.35);color:#fff;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:1px;transition:all 0.3s;font-family:inherit;margin-left:4px;">FR</button></li>
-            </ul>
+            <button id="langToggleBtn" onclick="toggleLang()" class="nav-lang-btn">FR</button>
         </div>
     </nav>
 
@@ -157,10 +153,6 @@
     <script>
     var nav = document.getElementById('mainNav');
     window.addEventListener('scroll', function() { nav.classList.toggle('nav-scrolled', window.scrollY > 60); });
-    document.getElementById('navHamburger').addEventListener('click', function() {
-        this.classList.toggle('open');
-        document.getElementById('navLinks').classList.toggle('open');
-    });
 
     var currentLang = 'en';
     window.toggleLang = function() {
