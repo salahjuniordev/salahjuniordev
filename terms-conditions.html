@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Terms &amp; Conditions | Salah Junior</title>
+    <meta name="description" content="Terms and conditions for working with Salah Junior, full-stack web developer and UI/UX designer based in Yaoundé, Cameroon.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://salahjuniordev.vercel.app/terms-conditions.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://salahjuniordev.vercel.app/terms-conditions.html">
+    <meta property="og:title" content="Terms &amp; Conditions | Salah Junior">
+    <meta property="og:description" content="Terms and conditions for working with Salah Junior, full-stack web developer and UI/UX designer based in Yaoundé, Cameroon.">
+    <meta property="og:site_name" content="Salah Junior Portfolio">
+    <link rel="shortcut icon" href="img/fav-icon/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        body { background: #0f172a; color: #94a3b8; font-family: Rubik, sans-serif; margin: 0; }
+        * { cursor: none !important; }
+        #cursor-dot {
+            position: fixed; top: 0; left: 0; width: 8px; height: 8px;
+            background: #0ea5e9; border-radius: 50%; pointer-events: none; z-index: 99999;
+            transform: translate(-50%,-50%);
+            transition: transform 0.1s ease, background 0.2s ease;
+            box-shadow: 0 0 8px #0ea5e9, 0 0 16px rgba(14,165,233,0.5);
+        }
+        #cursor-ring {
+            position: fixed; top: 0; left: 0; width: 36px; height: 36px;
+            border: 2px solid rgba(14,165,233,0.6); border-radius: 50%;
+            pointer-events: none; z-index: 99998; transform: translate(-50%,-50%);
+            transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, transform 0.12s ease;
+        }
+        #cursor-ring.hovered { width: 56px; height: 56px; border-color: rgba(14,165,233,1); background: rgba(14,165,233,0.08); }
+        #cursor-dot.hovered  { transform: translate(-50%,-50%) scale(1.8); background: #fff; }
+        #cursor-dot.clicking { transform: translate(-50%,-50%) scale(0.5); }
+                #mainNav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;
+            padding: 18px 0; transition: background 0.35s ease, padding 0.35s ease;
+        }
+        #mainNav.nav-scrolled {
+            background: rgba(10,15,30,0.97); backdrop-filter: blur(12px);
+            padding: 12px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 30px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { text-decoration: none; display: flex; align-items: baseline; gap: 2px; }
+        .logo-salah  { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.5px; }
+        .logo-junior { font-size: 20px; font-weight: 300; color: #94a3b8; letter-spacing: -0.5px; }
+        .logo-dev    { font-size: 11px; font-weight: 600; color: #0ea5e9; letter-spacing: 2px; text-transform: uppercase; margin-left: 3px; }
+        .nav-lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.35);
+            color: #fff;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            font-family: 'Rubik', sans-serif;
+            cursor: pointer;
+        }
+        .nav-lang-btn:hover {
+            background: rgba(14,165,233,0.15);
+            border-color: #0ea5e9;
+            color: #0ea5e9;
+        }
+        .sj-page-hero {
+            padding: 140px 0 80px; text-align: center; position: relative; overflow: hidden;
+            background: #0f172a; border-bottom: 1px solid rgba(14,165,233,0.1);
+        }
+        .sj-page-hero::before { display: none; }
+        .sj-page-hero .icon-badge {
+            width: 68px; height: 68px; border-radius: 20px; margin: 0 auto 24px;
+            background: rgba(14,165,233,0.1); border: 1px solid rgba(14,165,233,0.25);
+            display: flex; align-items: center; justify-content: center; font-size: 28px; color: #0ea5e9;
+        }
+        .sj-page-hero h1 { font-size: clamp(28px,5vw,44px); font-weight: 700; color: #fff; margin: 0 0 12px; letter-spacing: -0.5px; }
+        .sj-page-hero p  { font-size: 15px; color: #64748b; max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
+        .breadcrumb { display: flex; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 0; }
+        .breadcrumb li { font-size: 12px; color: #475569; }
+        .breadcrumb li a { color: #0ea5e9; text-decoration: none; }
+        .sj-content { max-width: 860px; margin: 0 auto; padding: 72px 24px 100px; }
+        .sj-back { display: inline-flex; align-items: center; gap: 8px; color: #0ea5e9; text-decoration: none;
+            font-size: 13px; font-weight: 500; margin-bottom: 48px; transition: gap 0.25s; }
+        .sj-back:hover { gap: 12px; }
+        .last-updated { font-size: 12px; color: #475569; text-align: right; margin-bottom: 36px; }
+        .sj-card { background: #111827; border: 1px solid rgba(14,165,233,0.1); border-radius: 16px; padding: 36px 40px; margin-bottom: 20px; transition: border-color 0.3s; }
+        .sj-card:hover { border-color: rgba(14,165,233,0.28); }
+        .sj-card h2 { font-size: 17px; font-weight: 600; color: #e2e8f0; margin: 0 0 18px; display: flex; align-items: center; gap: 10px; }
+        .sj-card h2 .card-icon { color: #0ea5e9; font-size: 18px; }
+        .sj-card p, .sj-card li { font-size: 14px; line-height: 1.85; color: #94a3b8; }
+        .sj-card ul { padding-left: 20px; margin: 12px 0 0; }
+        .sj-card ul li { margin-bottom: 8px; }
+        .sj-card a { color: #0ea5e9; text-decoration: none; }
+        .sj-card a:hover { text-decoration: underline; }
+        .sj-card.highlight { border-color: rgba(239,68,68,0.25); background: #111827; }
+        .sj-card.highlight h2 .card-icon { color: #f87171; }
+        .sj-card.highlight h2 { color: #fca5a5; }
+        .sj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+        .sj-grid-item { border-radius: 10px; padding: 16px 18px; font-size: 13px; line-height: 1.6; color: #94a3b8; }
+        .sj-grid-item.allowed { background: rgba(34,197,94,0.07); border: 1px solid rgba(34,197,94,0.2); }
+        .sj-grid-item.not-allowed { background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.2); }
+        .gi-mark { font-weight: 700; margin-right: 6px; }
+        .sj-grid-item.allowed .gi-mark { color: #4ade80; }
+        .sj-grid-item.not-allowed .gi-mark { color: #f87171; }
+        @media(max-width:600px){ .sj-grid { grid-template-columns: 1fr; } }
+        .faq-category { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+            color: #0ea5e9; margin: 48px 0 18px; padding-bottom: 10px; border-bottom: 1px solid rgba(14,165,233,0.15); }
+        .faq-item { background: #111827; border: 1px solid rgba(14,165,233,0.1); border-radius: 12px; margin-bottom: 10px; overflow: hidden; transition: border-color 0.3s; }
+        .faq-item:hover { border-color: rgba(14,165,233,0.3); }
+        .faq-question { padding: 20px 26px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .faq-question h4 { font-size: 14px; font-weight: 500; color: #e2e8f0; margin: 0; }
+        .faq-question i { color: #0ea5e9; transition: transform 0.3s; flex-shrink: 0; margin-left: 16px; font-size: 12px; }
+        .faq-question.open i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding: 16px 26px 20px; font-size: 14px; line-height: 1.8; color: #94a3b8; border-top: 1px solid rgba(14,165,233,0.08); }
+        .faq-answer.open { display: block; }
+        @media(max-width:600px){ .sj-card { padding: 26px 22px; } .sj-content { padding: 52px 18px 80px; } }
+    </style>
+</head>
+<body>
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+        <nav id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-salah">Salah</span><span class="logo-junior">Junior</span><span class="logo-dev">Dev</span>
+            </a>
+            <button id="langToggleBtn" onclick="toggleLang()" class="nav-lang-btn">FR</button>
+        </div>
+    </nav>
+
+    <div class="sj-page-hero">
+        <div class="icon-badge"><span class="ti-agenda"></span></div>
+        <h1 data-en="Terms &amp; Conditions" data-fr="Termes &amp; Conditions">Terms &amp; Conditions</h1>
+        <p data-en="Please read carefully before engaging our services" data-fr="Veuillez lire attentivement avant d'engager nos services">Please read carefully before engaging our services</p>
+        <ul class="breadcrumb">
+            <li><a href="index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+            <li>&#x203a;</li>
+            <li data-en="Terms &amp; Conditions" data-fr="Termes &amp; Conditions">Terms &amp; Conditions</li>
+        </ul>
+    </div>
+
+    <div class="sj-content">
+        <a href="index.html" class="sj-back"><i class="fas fa-arrow-left"></i> <span data-en="Back to Portfolio" data-fr="Retour au Portfolio">Back to Portfolio</span></a>
+        <p class="last-updated"><i class="fas fa-calendar-alt"></i> <span data-en="Last Updated: January 2026" data-fr="Derniere mise a jour : Janvier 2026">Last Updated: January 2026</span></p>
+        <div class="sj-card"><h2><span class="card-icon ti-check-box"></span> <span data-en="1. Acceptance of Terms" data-fr="1. Acceptation des Conditions">1. Acceptance of Terms</span></h2><div class="sj-body" data-body-en="By engaging SalahJuniorDev for any service via my portfolio, WhatsApp, email, or verbal agreement, you confirm you have read and agree to be bound by these Terms and Conditions. I reserve the right to update these terms at any time." data-body-fr="En faisant appel à SalahJuniorDev pour tout service, vous confirmez avoir lu et accepté ces Termes et Conditions. Je me réserve le droit de les mettre à jour à tout moment.">By engaging SalahJuniorDev for any service via my portfolio, WhatsApp, email, or verbal agreement, you confirm you have read and agree to be bound by these Terms and Conditions. I reserve the right to update these terms at any time.</div></div>
+<div class="sj-card"><h2><span class="card-icon ti-layers-alt"></span> <span data-en="2. Services Provided" data-fr="2. Services Fournis">2. Services Provided</span></h2><div class="sj-body" data-body-en="I provide: Full-Stack Website Design and Development, Graphic Design and Print Materials, UI/UX Design, Branding and Visual Identity, Social Media Content Design, and Office Administration Solutions. The specific scope will be agreed in writing before commencement." data-body-fr="Je fournis : Conception et développement Full-Stack, Design graphique et supports imprimés, Design UI/UX, Branding et identité visuelle, Conception de contenu pour réseaux sociaux, et Solutions d'administration. Le périmètre exact sera convenu par écrit avant le début.">I provide: Full-Stack Website Design and Development, Graphic Design and Print Materials, UI/UX Design, Branding and Visual Identity, Social Media Content Design, and Office Administration Solutions. The specific scope will be agreed in writing before commencement.</div></div>
+<div class="sj-card"><h2><span class="card-icon ti-user"></span> <span data-en="3. Client Responsibilities" data-fr="3. Responsabilités du Client">3. Client Responsibilities</span></h2><div class="sj-body" data-body-en="Clients are responsible for providing accurate briefs and content; responding to feedback requests on time; ensuring all materials provided are legally owned or licensed; and paying invoices as per the agreed schedule. Delays caused by client inaction will not count against my deadlines." data-body-fr="Les clients sont responsables de fournir des briefs précis ; de répondre aux demandes de feedback dans les délais ; de s'assurer que tous les matériaux fournis sont légalement détenus ou licenciés ; et de payer les factures conformément au calendrier convenu.">Clients are responsible for providing accurate briefs and content; responding to feedback requests on time; ensuring all materials provided are legally owned or licensed; and paying invoices as per the agreed schedule. Delays caused by client inaction will not count against my deadlines.</div></div>
+<div class="sj-card"><h2><span class="card-icon ti-money"></span> <span data-en="4. Payment Terms" data-fr="4. Conditions de Paiement">4. Payment Terms</span></h2><div class="sj-body" data-body-en="All projects require a <strong>50% deposit</strong> before work commences. The remaining 50% is due upon completion before final files are delivered. Invoices are payable within 7 days. Late payments may incur a 5% monthly surcharge. Prices are quoted in USD or XAF as agreed." data-body-fr="Tous les projets nécessitent un <strong>acompte de 50%</strong> avant le début. Les 50% restants sont dus à la livraison. Les factures sont payables dans les 7 jours. Les retards peuvent entraîner une majoration mensuelle de 5%. Les prix sont en USD ou XAF selon accord.">All projects require a <strong>50% deposit</strong> before work commences. The remaining 50% is due upon completion before final files are delivered. Invoices are payable within 7 days. Late payments may incur a 5% monthly surcharge. Prices are quoted in USD or XAF as agreed.</div></div>
+<div class="sj-card"><h2><span class="card-icon ti-crown"></span> <span data-en="5. Intellectual Property" data-fr="5. Propriété Intellectuelle">5. Intellectual Property</span></h2><div class="sj-body" data-body-en="Upon full payment, the client receives ownership of all custom work. I retain the right to display the work in my portfolio and use it as a case study (client name withheld if requested). Third-party assets remain subject to their respective licenses." data-body-fr="Après paiement intégral, le client reçoit la propriété de tout le travail personnalisé. Je me réserve le droit d'afficher le travail dans mon portfolio et de l'utiliser comme étude de cas (nom du client caché si demandé). Les ressources tierces restent soumises à leurs licences respectives.">Upon full payment, the client receives ownership of all custom work. I retain the right to display the work in my portfolio and use it as a case study (client name withheld if requested). Third-party assets remain subject to their respective licenses.</div></div>
+<div class="sj-card"><h2><span class="card-icon ti-lock"></span> <span data-en="6. Confidentiality" data-fr="6. Confidentialité">6. Confidentiality</span></h2><div class="sj-body" data-body-en="Both parties agree to keep confidential any proprietary information shared during the project. I will not share your business information, strategies, or data with third parties without your explicit written consent." data-body-fr="Les deux parties s'engagent à garder confidentielles les informations propriétaires partagées. Je ne partagerai pas vos informations commerciales ou données avec des tiers sans votre consentement écrit explicite.">Both parties agree to keep confidential any proprietary information shared during the project. I will not share your business information, strategies, or data with third parties without your explicit written consent.</div></div>
+<div class="sj-card"><h2><span class="card-icon ti-shield"></span> <span data-en="7. Limitation of Liability" data-fr="7. Limitation de Responsabilité">7. Limitation of Liability</span></h2><div class="sj-body" data-body-en="I shall not be liable for any indirect, incidental, or consequential damages. My maximum liability is limited to the amount paid by the client for the specific project in question." data-body-fr="Je ne serai pas responsable des dommages indirects ou consécutifs. Ma responsabilité maximale est limitée au montant payé par le client pour le projet spécifique en question.">I shall not be liable for any indirect, incidental, or consequential damages. My maximum liability is limited to the amount paid by the client for the specific project in question.</div></div>
+<div class="sj-card"><h2><span class="card-icon ti-close"></span> <span data-en="8. Termination" data-fr="8. Résiliation">8. Termination</span></h2><div class="sj-body" data-body-en="Either party may terminate a project with written notice. The client owes payment for all work completed to date. The deposit is non-refundable once work has started. Work-in-progress files are delivered upon full payment of outstanding amounts." data-body-fr="L'une ou l'autre des parties peut résilier un projet avec préavis écrit. Le client doit payer tous les travaux réalisés. L'acompte est non remboursable une fois les travaux commencés. Les fichiers en cours sont livrés après paiement intégral des montants dus.">Either party may terminate a project with written notice. The client owes payment for all work completed to date. The deposit is non-refundable once work has started. Work-in-progress files are delivered upon full payment of outstanding amounts.</div></div>
+<div class="sj-card"><h2><span class="card-icon ti-location-pin"></span> <span data-en="9. Governing Law" data-fr="9. Droit Applicable">9. Governing Law</span></h2><div class="sj-body" data-body-en="These Terms are governed by the laws of the Republic of Cameroon. Disputes shall first be resolved through good-faith negotiation, and if unresolved, through the courts of Yaoundé, Cameroon." data-body-fr="Ces Conditions sont régies par les lois de la République du Cameroun. Les litiges seront d'abord résolus par négociation de bonne foi, puis par les tribunaux de Yaoundé si nécessaire.">These Terms are governed by the laws of the Republic of Cameroon. Disputes shall first be resolved through good-faith negotiation, and if unresolved, through the courts of Yaoundé, Cameroon.</div></div>
+<div class="sj-card"><h2><span class="card-icon ti-email"></span> <span data-en="10. Contact" data-fr="10. Contact">10. Contact</span></h2><div class="sj-body" data-body-en="Email: <a href='mailto:salahjuniorncham@gmail.com'>salahjuniorncham@gmail.com</a><br>WhatsApp: +237 683 693 011<br>Address: Yaoundé, Emana, Cameroon" data-body-fr="E-mail : <a href='mailto:salahjuniorncham@gmail.com'>salahjuniorncham@gmail.com</a><br>WhatsApp : +237 683 693 011<br>Adresse : Yaoundé, Emana, Cameroun">Email: <a href='mailto:salahjuniorncham@gmail.com'>salahjuniorncham@gmail.com</a><br>WhatsApp: +237 683 693 011<br>Address: Yaoundé, Emana, Cameroon</div></div>
+    </div>
+
+    <script>
+    var nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', function() { nav.classList.toggle('nav-scrolled', window.scrollY > 60); });
+
+    var currentLang = 'en';
+    window.toggleLang = function() {
+        currentLang = currentLang === 'en' ? 'fr' : 'en';
+        document.querySelectorAll('[data-en]').forEach(function(el) {
+            el.textContent = el.getAttribute('data-' + currentLang);
+        });
+        document.querySelectorAll('.sj-body').forEach(function(el) {
+            var html = el.getAttribute('data-body-' + currentLang);
+            if (html) el.innerHTML = html;
+        });
+        document.querySelectorAll('.sj-grid-block').forEach(function(el) {
+            var html = el.getAttribute('data-grid-' + currentLang);
+            if (html) el.innerHTML = html;
+        });
+        document.getElementById('langToggleBtn').textContent = currentLang === 'en' ? 'FR' : 'EN';
+    };
+
+    window.toggleFAQ = function(el) {
+        var answer = el.nextElementSibling;
+        var isOpen = answer.classList.contains('open');
+        document.querySelectorAll('.faq-answer.open').forEach(function(a) {
+            a.classList.remove('open');
+            a.previousElementSibling.classList.remove('open');
+        });
+        if (!isOpen) { answer.classList.add('open'); el.classList.add('open'); }
+    };
+
+    (function() {
+        var dot = document.getElementById('cursor-dot');
+        var ring = document.getElementById('cursor-ring');
+        var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+        document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX; mouseY = e.clientY;
+            dot.style.left = mouseX + 'px'; dot.style.top = mouseY + 'px';
+        });
+        (function animateRing() {
+            ringX += (mouseX - ringX) * 0.12;
+            ringY += (mouseY - ringY) * 0.12;
+            ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
+            requestAnimationFrame(animateRing);
+        })();
+        document.querySelectorAll('a, button, [role="button"]').forEach(function(el) {
+            el.addEventListener('mouseenter', function() { dot.classList.add('hovered'); ring.classList.add('hovered'); });
+            el.addEventListener('mouseleave', function() { dot.classList.remove('hovered'); ring.classList.remove('hovered'); });
+        });
+        document.addEventListener('mousedown', function() { dot.classList.add('clicking'); });
+        document.addEventListener('mouseup',   function() { dot.classList.remove('clicking'); });
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Building an AI Marketing SaaS for a Cosmetics Brand in Cameroon | Salah Junior</title>
+    <meta name="description" content="From fal.ai image generation to Google Gemini captions — a full technical walkthrough of building the Maney Cosmetics AI Marketing Studio and what I learned about AI product development in Cameroon.">
+    <meta name="keywords" content="AI SaaS Cameroon, fal.ai, Google Gemini, marketing automation Africa, Salah Junior blog, full-stack AI development">
+    <meta name="author" content="Salah Junior">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://salahjuniordev.vercel.app/blog/building-ai-marketing-saas-cosmetics-cameroon.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://salahjuniordev.vercel.app/blog/building-ai-marketing-saas-cosmetics-cameroon.html">
+    <meta property="og:title" content="Building an AI Marketing SaaS for a Cosmetics Brand in Cameroon | Salah Junior">
+    <meta property="og:description" content="From fal.ai image generation to Google Gemini captions, I walk through the full stack behind Maney Cosmetics AI Studio — and what I learned building it.">
+    <meta property="og:image" content="https://res.cloudinary.com/drmamswdc/image/upload/v1779906593/file_00000000b818720aafa06ee3cd5def66_xvmwwa.png">
+    <meta property="og:site_name" content="Salah Junior Portfolio">
+    <meta property="article:published_time" content="2026-01-05">
+    <meta property="article:author" content="Salah Junior">
+    <meta property="article:section" content="AI & Tools">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Building an AI Marketing SaaS for a Cosmetics Brand in Cameroon | Salah Junior">
+    <meta name="twitter:description" content="From fal.ai image generation to Google Gemini captions — full stack behind Maney Cosmetics AI Studio.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/drmamswdc/image/upload/v1779906593/file_00000000b818720aafa06ee3cd5def66_xvmwwa.png">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <link rel="shortcut icon" href="../img/fav-icon/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/plugins.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Building an AI Marketing SaaS for a Cosmetics Brand in Cameroon",
+      "description": "From fal.ai image generation to Google Gemini captions, I walk through the full stack behind Maney Cosmetics AI Studio — and what I learned building it.",
+      "image": "https://res.cloudinary.com/drmamswdc/image/upload/v1779906593/file_00000000b818720aafa06ee3cd5def66_xvmwwa.png",
+      "author": { "@type": "Person", "name": "Salah Junior", "url": "https://salahjuniordev.vercel.app/" },
+      "publisher": { "@type": "Organization", "name": "SalahJuniorDev", "url": "https://salahjuniordev.vercel.app/" },
+      "datePublished": "2026-01-05",
+      "dateModified": "2026-01-05",
+      "url": "https://salahjuniordev.vercel.app/blog/building-ai-marketing-saas-cosmetics-cameroon.html",
+      "mainEntityOfPage": "https://salahjuniordev.vercel.app/blog/building-ai-marketing-saas-cosmetics-cameroon.html",
+      "keywords": ["AI SaaS", "fal.ai", "Google Gemini", "Cameroon tech", "marketing automation"],
+      "articleSection": "AI & Tools",
+      "timeRequired": "PT7M",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://salahjuniordev.vercel.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://salahjuniordev.vercel.app/#blog" },
+          { "@type": "ListItem", "position": 3, "name": "Building an AI Marketing SaaS for a Cosmetics Brand in Cameroon" }
+        ]
+      }
+    }
+    </script>
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        body { background: #0f172a; color: #94a3b8; font-family: Rubik, sans-serif; margin: 0; }
+        .blog-page-nav { background: rgba(15, 23, 42, 0.95); padding: 18px 0; border-bottom: 1px solid rgba(14,165,233,0.15); position: sticky; top: 0; z-index: 999; }
+        .blog-page-nav .container { display: flex; align-items: center; justify-content: space-between; max-width: 860px; margin: 0 auto; padding: 0 24px; }
+        .blog-page-nav a { color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+        .blog-page-nav a:hover { color: #0ea5e9; }
+        .blog-page-nav .back-link { display: flex; align-items: center; gap: 8px; }
+        .blog-page-nav .site-name { color: #0ea5e9; font-weight: 700; font-size: 16px; }
+        .blog-article { max-width: 780px; margin: 0 auto; padding: 60px 24px 100px; }
+        .article-tag { display: inline-block; background: rgba(14,165,233,0.12); color: #0ea5e9; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; border: 1px solid rgba(14,165,233,0.25); }
+        .article-title { font-size: clamp(26px, 5vw, 42px); font-weight: 800; color: #e2e8f0; line-height: 1.2; margin: 0 0 20px; letter-spacing: -0.5px; }
+        .article-meta { display: flex; gap: 20px; font-size: 13px; color: #64748b; margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .article-meta span { display: flex; align-items: center; gap: 7px; }
+        .article-hero { width: 100%; border-radius: 14px; margin-bottom: 48px; display: block; aspect-ratio: 16/9; object-fit: cover; }
+        .article-body { font-size: 17px; line-height: 1.85; color: #94a3b8; }
+        .article-body p { margin: 0 0 24px; }
+        .article-body h2 { font-size: 24px; font-weight: 700; color: #e2e8f0; margin: 44px 0 16px; }
+        .article-body h3 { font-size: 20px; font-weight: 700; color: #e2e8f0; margin: 36px 0 12px; }
+        .article-body ul { padding-left: 24px; margin: 0 0 24px; }
+        .article-body li { margin-bottom: 10px; }
+        .article-body strong { color: #cbd5e1; font-weight: 600; }
+        .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .article-footer .back-btn { display: inline-flex; align-items: center; gap: 9px; background: #0ea5e9; color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 14px; transition: background .2s; }
+        .article-footer .back-btn:hover { background: #0284c7; }
+        .author-card { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 20px 24px; margin-top: 48px; }
+        .author-card img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; }
+        .author-card .author-info { font-size: 14px; color: #64748b; }
+        .author-card .author-name { font-size: 16px; font-weight: 700; color: #e2e8f0; margin-bottom: 4px; }
+        .author-card .author-link { color: #0ea5e9; text-decoration: none; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <nav class="blog-page-nav" aria-label="Site navigation">
+        <div class="container">
+            <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            <a href="../index.html#blog" class="site-name">SalahJuniorDev</a>
+        </div>
+    </nav>
+
+    <article class="blog-article" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="datePublished" content="2026-01-05">
+        <meta itemprop="dateModified" content="2026-01-05">
+        <meta itemprop="author" content="Salah Junior">
+
+        <span class="article-tag" itemprop="articleSection">AI &amp; Tools</span>
+
+        <h1 class="article-title" itemprop="headline">Building an AI Marketing SaaS for a Cosmetics Brand in Cameroon</h1>
+
+        <div class="article-meta">
+            <span><i class="far fa-calendar-alt"></i> January 5, 2026</span>
+            <span><i class="far fa-clock"></i> 7 min read</span>
+            <span><i class="far fa-user"></i> Salah Junior</span>
+        </div>
+
+        <img
+            src="https://res.cloudinary.com/drmamswdc/image/upload/v1779906593/file_00000000b818720aafa06ee3cd5def66_xvmwwa.png"
+            alt="Building an AI Marketing SaaS for Maney Cosmetics – Salah Junior"
+            class="article-hero"
+            itemprop="image"
+            loading="eager"
+        >
+
+        <div class="article-body" itemprop="articleBody">
+            <p>Maney Cosmetics is a growing beauty brand based in Douala. Their problem: creating consistent marketing content across Instagram, WhatsApp Status, and print took hours every week. My job was to cut that time to minutes.</p>
+
+            <h3>What the Product Does</h3>
+            <p>The Maney AI Studio lets the brand team:</p>
+            <ul>
+                <li>Upload a product image and generate a professional marketing flyer in seconds using <strong>fal.ai</strong></li>
+                <li>Get AI-written captions in French and English via <strong>Google Gemini</strong></li>
+                <li>Chat with a brand-aware assistant that knows their tone and product line</li>
+                <li>Export everything directly to WhatsApp or download for Instagram</li>
+            </ul>
+
+            <h3>The Stack</h3>
+            <p>Next.js handles the frontend and API routes. fal.ai powers the image generation — it's fast, affordable, and the output quality is excellent for commercial product shots. Gemini 1.5 Flash handles the text. The whole thing runs on Vercel with a Cloudinary CDN for image storage.</p>
+
+            <h3>What I Learned</h3>
+            <p>AI products live or die by their prompts. I spent more time engineering the system prompts than I did building the UI. The brand's tone, product vocabulary, and visual style all had to be baked into every API call. That invisible work is what makes the output feel like it came from the brand — not a generic AI.</p>
+        </div>
+
+        <div class="author-card">
+            <img src="https://res.cloudinary.com/drmamswdc/image/upload/v1777468680/file_00000000cc7c720eb597618058b38454_kptzwi.png" alt="Salah Junior">
+            <div>
+                <div class="author-name">Salah Junior</div>
+                <div class="author-info">Full-Stack Developer &amp; UI/UX Designer based in Yaoundé, Cameroon</div>
+                <a href="../index.html" class="author-link">View Portfolio →</a>
+            </div>
+        </div>
+
+        <div class="article-footer">
+            <a href="../index.html#blog" class="back-btn"><i class="fas fa-arrow-left"></i> All Articles</a>
+            <a href="../index.html#contact" class="back-btn" style="background: transparent; border: 1px solid #0ea5e9; color: #0ea5e9;">Hire Me</a>
+        </div>
+    </article>
+
+</body>
+</html>

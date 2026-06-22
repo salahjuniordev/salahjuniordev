@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>How I Build Full-Stack Apps for African Clients | Salah Junior</title>
+    <meta name="description" content="A behind-the-scenes look at my full-stack development workflow: from client brief to deployed product — how I move fast, stay organized, and deliver clean builds without cutting corners.">
+    <meta name="keywords" content="full-stack development Cameroon, web development workflow Africa, Next.js developer Yaoundé, Salah Junior blog">
+    <meta name="author" content="Salah Junior">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://salahjuniordev.vercel.app/blog/how-i-build-full-stack-apps-for-african-clients.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://salahjuniordev.vercel.app/blog/how-i-build-full-stack-apps-for-african-clients.html">
+    <meta property="og:title" content="How I Build Full-Stack Apps for African Clients | Salah Junior">
+    <meta property="og:description" content="A behind-the-scenes look at my workflow: from client brief to deployed product — how I move fast, stay organized, and deliver clean full-stack builds.">
+    <meta property="og:image" content="https://res.cloudinary.com/drmamswdc/image/upload/v1779906618/file_000000006c9071f483845b7f26fe30a7_jimvds.png">
+    <meta property="og:site_name" content="Salah Junior Portfolio">
+    <meta property="article:published_time" content="2026-03-20">
+    <meta property="article:author" content="Salah Junior">
+    <meta property="article:section" content="Web Development">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How I Build Full-Stack Apps for African Clients | Salah Junior">
+    <meta name="twitter:description" content="From WhatsApp voice-note brief to deployed product — my full-stack workflow for African clients.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/drmamswdc/image/upload/v1779906618/file_000000006c9071f483845b7f26fe30a7_jimvds.png">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <link rel="shortcut icon" href="../img/fav-icon/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/plugins.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How I Build Full-Stack Apps for African Clients",
+      "description": "A behind-the-scenes look at my workflow: from client brief to deployed product — how I move fast, stay organized, and deliver clean full-stack builds without cutting corners.",
+      "image": "https://res.cloudinary.com/drmamswdc/image/upload/v1779906618/file_000000006c9071f483845b7f26fe30a7_jimvds.png",
+      "author": { "@type": "Person", "name": "Salah Junior", "url": "https://salahjuniordev.vercel.app/" },
+      "publisher": { "@type": "Organization", "name": "SalahJuniorDev", "url": "https://salahjuniordev.vercel.app/" },
+      "datePublished": "2026-03-20",
+      "dateModified": "2026-03-20",
+      "url": "https://salahjuniordev.vercel.app/blog/how-i-build-full-stack-apps-for-african-clients.html",
+      "mainEntityOfPage": "https://salahjuniordev.vercel.app/blog/how-i-build-full-stack-apps-for-african-clients.html",
+      "keywords": ["full-stack development", "web development Cameroon", "Next.js", "African tech"],
+      "articleSection": "Web Development",
+      "timeRequired": "PT5M",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://salahjuniordev.vercel.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://salahjuniordev.vercel.app/#blog" },
+          { "@type": "ListItem", "position": 3, "name": "How I Build Full-Stack Apps for African Clients" }
+        ]
+      }
+    }
+    </script>
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        body { background: #0f172a; color: #94a3b8; font-family: Rubik, sans-serif; margin: 0; }
+        .blog-page-nav {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(14, 165, 233, 0.15);
+            position: sticky; top: 0; z-index: 999;
+        }
+        .blog-page-nav .container { display: flex; align-items: center; justify-content: space-between; max-width: 860px; margin: 0 auto; padding: 0 24px; }
+        .blog-page-nav a { color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+        .blog-page-nav a:hover { color: #0ea5e9; }
+        .blog-page-nav .back-link { display: flex; align-items: center; gap: 8px; }
+        .blog-page-nav .site-name { color: #0ea5e9; font-weight: 700; font-size: 16px; }
+        .blog-article { max-width: 780px; margin: 0 auto; padding: 60px 24px 100px; }
+        .article-tag { display: inline-block; background: rgba(14,165,233,0.12); color: #0ea5e9; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; border: 1px solid rgba(14,165,233,0.25); }
+        .article-title { font-size: clamp(26px, 5vw, 42px); font-weight: 800; color: #e2e8f0; line-height: 1.2; margin: 0 0 20px; letter-spacing: -0.5px; }
+        .article-meta { display: flex; gap: 20px; font-size: 13px; color: #64748b; margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .article-meta span { display: flex; align-items: center; gap: 7px; }
+        .article-hero { width: 100%; border-radius: 14px; margin-bottom: 48px; display: block; aspect-ratio: 16/9; object-fit: cover; }
+        .article-body { font-size: 17px; line-height: 1.85; color: #94a3b8; }
+        .article-body p { margin: 0 0 24px; }
+        .article-body h2 { font-size: 24px; font-weight: 700; color: #e2e8f0; margin: 44px 0 16px; }
+        .article-body h3 { font-size: 20px; font-weight: 700; color: #e2e8f0; margin: 36px 0 12px; }
+        .article-body ul { padding-left: 24px; margin: 0 0 24px; }
+        .article-body li { margin-bottom: 10px; }
+        .article-body strong { color: #cbd5e1; font-weight: 600; }
+        .article-body a { color: #0ea5e9; text-decoration: underline; text-underline-offset: 3px; }
+        .article-footer { margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .article-footer .back-btn { display: inline-flex; align-items: center; gap: 9px; background: #0ea5e9; color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 14px; transition: background .2s; }
+        .article-footer .back-btn:hover { background: #0284c7; }
+        .author-card { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 20px 24px; margin-top: 48px; }
+        .author-card img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; }
+        .author-card .author-info { font-size: 14px; color: #64748b; }
+        .author-card .author-name { font-size: 16px; font-weight: 700; color: #e2e8f0; margin-bottom: 4px; }
+        .author-card .author-link { color: #0ea5e9; text-decoration: none; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <nav class="blog-page-nav" aria-label="Site navigation">
+        <div class="container">
+            <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            <a href="../index.html#blog" class="site-name">SalahJuniorDev</a>
+        </div>
+    </nav>
+
+    <article class="blog-article" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="datePublished" content="2026-03-20">
+        <meta itemprop="dateModified" content="2026-03-20">
+        <meta itemprop="author" content="Salah Junior">
+
+        <span class="article-tag" itemprop="articleSection">Web Development</span>
+
+        <h1 class="article-title" itemprop="headline">How I Build Full-Stack Apps for African Clients</h1>
+
+        <div class="article-meta">
+            <span><i class="far fa-calendar-alt"></i> March 20, 2026</span>
+            <span><i class="far fa-clock"></i> 5 min read</span>
+            <span><i class="far fa-user"></i> Salah Junior</span>
+        </div>
+
+        <img
+            src="https://res.cloudinary.com/drmamswdc/image/upload/v1779906618/file_000000006c9071f483845b7f26fe30a7_jimvds.png"
+            alt="How I Build Full-Stack Apps for African Clients – Salah Junior"
+            class="article-hero"
+            itemprop="image"
+            loading="eager"
+        >
+
+        <div class="article-body" itemprop="articleBody">
+            <p>Every client project starts the same way: a brief. But in Cameroon, that brief rarely comes as a clean PDF. It arrives over WhatsApp voice notes, across two languages, with shifting scope and an urgent deadline.</p>
+
+            <h3>The First Conversation</h3>
+            <p>I start every engagement with a clarity call. Not a sales call — a diagnostic. I need to know: What problem are we actually solving? Who is the user? What does success look like in 60 days? Most clients haven't thought past "I want a website." That's fine. My job is to help them think clearly before I write a single line of code.</p>
+
+            <h3>My Tech Stack in 2026</h3>
+            <p>For most client projects I reach for:</p>
+            <ul>
+                <li><strong>Next.js</strong> — server-side rendering, fast, SEO-ready out of the box</li>
+                <li><strong>Tailwind CSS</strong> — utility-first, no fighting with stylesheets</li>
+                <li><strong>Node.js + Express</strong> — simple REST APIs when a backend is needed</li>
+                <li><strong>MongoDB Atlas</strong> — flexible schema, free tier works for most MVPs</li>
+                <li><strong>Vercel</strong> — zero-config deploys, edge network, free for small projects</li>
+            </ul>
+
+            <h3>Staying Organized</h3>
+            <p>I use a simple Notion board: Backlog → In Progress → Review → Done. Every task maps to a client-visible milestone. No surprises. No scope creep without a conversation.</p>
+            <p>The result? Most projects ship in under three weeks. Clients get working software. I get referrals. That's the loop.</p>
+        </div>
+
+        <div class="author-card">
+            <img src="https://res.cloudinary.com/drmamswdc/image/upload/v1777468680/file_00000000cc7c720eb597618058b38454_kptzwi.png" alt="Salah Junior">
+            <div>
+                <div class="author-name">Salah Junior</div>
+                <div class="author-info">Full-Stack Developer &amp; UI/UX Designer based in Yaoundé, Cameroon</div>
+                <a href="../index.html" class="author-link">View Portfolio →</a>
+            </div>
+        </div>
+
+        <div class="article-footer">
+            <a href="../index.html#blog" class="back-btn"><i class="fas fa-arrow-left"></i> All Articles</a>
+            <a href="../index.html#contact" class="back-btn" style="background: transparent; border: 1px solid #0ea5e9; color: #0ea5e9;">Hire Me</a>
+        </div>
+    </article>
+
+</body>
+</html>
